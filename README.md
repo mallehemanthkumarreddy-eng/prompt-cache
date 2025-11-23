@@ -113,7 +113,7 @@ Built for speed, safety, and reliability:
 
 ## 🛣️ Roadmap
 
-### ✔️ v0.1 (Current)
+### ✔️ v0.1 (In progress - not stable)
 
 * In-memory & BadgerDB storage
 * Smart semantic verification (dual-threshold + intent check)
