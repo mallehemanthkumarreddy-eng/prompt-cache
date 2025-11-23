@@ -3,7 +3,7 @@
 ### **Cut your LLM bill by 80%. Speed up your app by 100x.**
 **The intelligent semantic cache for high-scale GenAI applications.**
 
-![Go](https://img.shields.io/badge/Go-1.21+-00ADD8?style=flat&logo=go)
+![Go](https://img.shields.io/badge/Go-1.25+-00ADD8?style=flat&logo=go)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
