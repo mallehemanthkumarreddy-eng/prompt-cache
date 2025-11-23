@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -35,7 +36,7 @@ func main() {
 
 	// Initialize Semantic Engine
 	openaiProvider := semantic.NewOpenAIProvider()
-	semanticEngine := semantic.NewSemanticEngine(openaiProvider, store, 0.88) // 0.88 threshold
+	semanticEngine := semantic.NewSemanticEngine(openaiProvider, store, 0.80) // 0.80 threshold
 
 	// Initialize Cache
 	c := cache.NewCache(store)
@@ -82,7 +83,9 @@ func main() {
 
 		if similarKey != "" {
 			log.Printf("🔥 Cache HIT! Score: %f, Key: %s", score, similarKey)
-			cachedResp, found, err := c.Get(ctx, similarKey)
+			// The key in semantic storage has "emb:" prefix, but cache storage does not.
+			actualKey := strings.TrimPrefix(similarKey, "emb:")
+			cachedResp, found, err := c.Get(ctx, actualKey)
 			if err == nil && found {
 				cGin.Data(http.StatusOK, "application/json", cachedResp)
 				return

@@ -1,9 +1,3 @@
-Here is the **full English README** for your project **PromptCache** — clean, professional, and ready for GitHub.
-
-You can paste this entire file into **README.md**.
-
----
-
 # 🚀 PromptCache
 
 ### **A blazing-fast semantic cache for LLM APIs — Save money. Reduce latency. Scale effortlessly.**
@@ -89,10 +83,8 @@ Dashboard (coming soon) showing:
 # 🛠 Installation
 
 ```bash
-go get github.com/yourusername/promptcache
+go get github.com/messkan/prompt-cache
 ```
-
-(Replace with your actual repo.)
 
 ---
 
@@ -198,11 +190,3 @@ If you find this useful:
 # 📄 License
 
 MIT License — free for commercial use.
-
----
-
-If you want, I can also generate:
-✅ A clean project structure
-✅ A logo for the repository
-✅ A perfect README badge section
-Just tell me!

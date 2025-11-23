@@ -58,7 +58,7 @@ func (c *Cache) Get(ctx context.Context, key string) ([]byte, bool, error) {
 		return nil, false, err
 	}
 
-	if item.TTL > 0 && time.Since(item.CreatedAt) > item.TTL {
+	if item.TTL != 0 && time.Since(item.CreatedAt) > item.TTL {
 		return nil, false, nil
 	}
 
