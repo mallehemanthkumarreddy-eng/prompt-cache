@@ -31,3 +31,9 @@ Thumbs.db
 # Env files (si tu en utilises pour clés API)
 .env
 .env.*
+
+# Data
+badger_data/
+
+# Debug scripts
+cmd/debug*/

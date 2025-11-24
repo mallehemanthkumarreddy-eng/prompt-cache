@@ -65,15 +65,19 @@ This ensures cached responses are **semantically correct**, not just “close en
 
 PromptCache works as a **drop-in replacement** for the OpenAI API.
 
-### 1. Run the server
+### 1. Run with Docker (Recommended)
 
 ```bash
+# Clone the repo
 git clone https://github.com/messkan/prompt-cache.git
 cd prompt-cache
-make run
+
+# Run with Docker Compose
+export OPENAI_API_KEY=your_key_here
+docker-compose up -d
 ```
 
-### 2. Update your client
+### 2. Run from Source
 
 Simply change the `base_url` in your SDK:
 

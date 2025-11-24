@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  prompt-cache:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./badger_data:/root/badger_data
+    restart: unless-stopped
