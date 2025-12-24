@@ -10,7 +10,6 @@ import (
 	"github.com/google/go-github/v55/github"
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
-	"io/ioutil"
 )
 
 type RoadmapItem struct {
@@ -41,7 +40,7 @@ func main() {
 	defaultAssignee := os.Getenv("DEFAULT_ASSIGNEE")
 
 	// Read roadmap.yml from repo root
-	data, err := ioutil.ReadFile("roadmap.yml")
+	data, err := os.ReadFile("roadmap.yml")
 	if err != nil {
 		log.Fatalf("failed to read roadmap.yml: %v", err)
 	}
@@ -119,12 +118,20 @@ func main() {
 		created, resp, err := client.Issues.Create(ctx, owner, repo, issueRequest)
 		if err != nil {
 			// If assignees caused a failure (not assignable), try without assignees
-			log.Printf("Failed to create issue %q (attempt with assignees %v): %v (status %d)", title, assignees, err, resp.StatusCode)
+			statusCode := 0
+			if resp != nil {
+				statusCode = resp.StatusCode
+			}
+			log.Printf("Failed to create issue %q (attempt with assignees %v): %v (status %d)", title, assignees, err, statusCode)
 			if len(assignees) > 0 {
 				issueRequest.Assignees = &[]string{}
 				created2, resp2, err2 := client.Issues.Create(ctx, owner, repo, issueRequest)
 				if err2 != nil {
-					log.Printf("Retry without assignees also failed for %q: %v (status %d). Skipping.", title, err2, resp2.StatusCode)
+					statusCode2 := 0
+					if resp2 != nil {
+						statusCode2 = resp2.StatusCode
+					}
+					log.Printf("Retry without assignees also failed for %q: %v (status %d). Skipping.", title, err2, statusCode2)
 					continue
 				}
 				log.Printf("Created issue #%d for %q (without assignees)", *created2.Number, title)
