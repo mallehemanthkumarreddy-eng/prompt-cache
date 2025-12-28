@@ -97,7 +97,7 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="http://localhost:8080/v1",  # Point to PromptCache
-    api_key="sk-..."
+    api_key="your-openai-api-key"
 )
 
 # First request → goes to the LLM provider
@@ -132,7 +132,7 @@ If not specified, **OpenAI** is used by default.
 ### OpenAI (Default)
 ```bash
 export EMBEDDING_PROVIDER=openai
-export OPENAI_API_KEY=sk-...
+export OPENAI_API_KEY=your-openai-api-key
 ```
 - **Embedding Model**: `text-embedding-3-small`
 - **Verification Model**: `gpt-4o-mini`
