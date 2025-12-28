@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.4"
-gem "just-the-docs", "0.10.0"
+# GitHub Pages gem includes Jekyll and dependencies
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
-# Optional plugins
+# Remote theme support (included in github-pages)
+gem "jekyll-remote-theme"
 gem "jekyll-seo-tag"
-gem "jekyll-github-metadata"

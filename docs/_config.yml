@@ -1,6 +1,6 @@
 title: PromptCache
 description: Smart semantic cache for GenAI workloads
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs@v0.10.0
 
 url: https://messkan.github.io/prompt-cache
 
@@ -47,3 +47,8 @@ callouts:
   tip:
     title: Tip
     color: green
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
