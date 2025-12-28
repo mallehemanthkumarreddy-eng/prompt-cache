@@ -28,7 +28,6 @@ PromptCache is a lightweight middleware that sits between your application and y
 - [API Reference](api-reference.md)
 - [Configuration Guide](configuration.md)
 - [Provider Setup](providers.md)
-- [Deployment](deployment.md)
 
 ## Architecture
 

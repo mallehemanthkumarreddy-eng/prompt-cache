@@ -38,7 +38,6 @@ docs/
 ├── api-reference.md      # REST API documentation
 ├── configuration.md      # Configuration guide
 ├── providers.md          # Provider setup & comparison
-├── deployment.md         # Production deployment
 └── _config.yml          # Jekyll configuration
 ```
 

@@ -128,7 +128,6 @@ Look for these indicators:
 - [Configure providers](providers.md)
 - [Tune cache settings](configuration.md)
 - [Read API documentation](api-reference.md)
-- [Deploy to production](deployment.md)
 
 ## Troubleshooting
 
